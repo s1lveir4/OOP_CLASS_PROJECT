@@ -1,0 +1,47 @@
+package domain;
+
+import java.util.Date;
+
+import exceptions.AudienciaException;
+
+public class Audiencia {
+
+	private final Date data;
+	private final String recomendacao;
+	private final Advogado advogado;
+
+	public Audiencia(Date data, String recomendacao, Advogado advogado) throws AudienciaException {
+
+		if (advogado == null) {
+			throw new AudienciaException("Forneça um cadastro de advogado válido");
+		}
+
+		this.data = data;
+		this.recomendacao = recomendacao;
+		this.advogado = advogado;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public String getRecomendacao() {
+		return recomendacao;
+	}
+
+	public Advogado getAdvogado() {
+		return advogado;
+	}
+
+	public String listaInformacoes() {
+
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("\nDATA: " + getData());
+		sb.append("\nADVOGADO: " + this.advogado.getNome() + " - " + "REGISTRO: " + this.advogado.getRegistro());
+		sb.append("\nRECOMENDACAO: " + getRecomendacao());
+
+		return sb.toString();
+	}
+
+}
