@@ -10,4 +10,6 @@ public interface IPessoa {
 	
 	public abstract String getCadastroRF();
 	
+	public abstract String listaInformacoes();
+	
 }

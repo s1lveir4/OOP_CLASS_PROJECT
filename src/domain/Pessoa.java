@@ -54,6 +54,5 @@ public abstract class Pessoa implements IPessoa {
 
 	public abstract String getCadastroRF();
 
-	public abstract String listaInformacoes();
 
 }
