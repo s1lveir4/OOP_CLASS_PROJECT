@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Date;
 
-import exceptions.DespesaExcption;
+import exceptions.DespesaException;
 
 public class Despesa {
 	
@@ -10,18 +10,18 @@ public class Despesa {
 	private final String descricao;
 	private final double valor;
 	
-	public Despesa(Date data, String descricao, double valor) throws DespesaExcption{
+	public Despesa(Date data, String descricao, double valor) throws DespesaException{
 		
 		if (valor <= 0) {
-			throw new DespesaExcption("O valor da despesa deve ser maior do que zero.");
+			throw new DespesaException("O valor da despesa deve ser maior do que zero.");
 		}
 		
 		if (data == null) {
-			throw new DespesaExcption("Insira uma data válida");
+			throw new DespesaException("Insira uma data válida");
 		}
 		
 		if (descricao == null || descricao.isBlank() || descricao.isEmpty()) {
-			throw new DespesaExcption("A despesa deve possuir uma descrição válida.");
+			throw new DespesaException("A despesa deve possuir uma descrição válida.");
 		}
 		
 		this.data = data;
