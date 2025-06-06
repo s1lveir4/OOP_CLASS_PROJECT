@@ -47,6 +47,7 @@ public class Advogado implements IPessoa {
 		return registro;
 	}
 
+	@Override
 	public String listaInformacoes() {
 
 		StringBuilder sb = new StringBuilder();
