@@ -37,11 +37,13 @@ public class PessoaJuridica extends Pessoa {
 		this.preposto = preposto;
 	}
 	
+	@Override	
 	public String getCadastroRF() {
 		
 		return this.getCnpj();
 	}
 	
+	@Override
 	public String listaInformacoes() {
 		
 		StringBuilder sb = new StringBuilder();
