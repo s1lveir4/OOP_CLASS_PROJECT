@@ -23,18 +23,22 @@ public class Advogado implements IPessoa {
 		this.registro = registro;
 	}
 
+	@Override
 	public String getNome() {
 		return pessoaFisica.getNome();
 	}
 
+	@Override
 	public String getEmail() {
 		return pessoaFisica.getEmail();
 	}
 
+	@Override
 	public String getTelefone() {
 		return pessoaFisica.getTelefone();
 	}
 
+	@Override
 	public String getCadastroRF() {
 		return pessoaFisica.getCadastroRF();
 	}
