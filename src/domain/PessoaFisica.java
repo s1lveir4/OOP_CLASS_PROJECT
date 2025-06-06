@@ -24,11 +24,13 @@ public class PessoaFisica extends Pessoa implements IPessoa {
 		return cpf;
 	}
 
+	@Override
 	public String getCadastroRF() {
 
 		return this.getCpf();
 	}
 
+	@Override
 	public String listaInformacoes() {
 
 		StringBuilder sb = new StringBuilder();
