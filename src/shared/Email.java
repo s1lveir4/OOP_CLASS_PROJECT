@@ -7,8 +7,8 @@ import exceptions.EmailException;
 
 public class Email {
 	
-	private String emailAddress;
-	private String validator = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+	private final String emailAddress;
+	private final String validator = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
 	
 	public Email(String emailAdress) throws EmailException {
 		
@@ -30,6 +30,10 @@ public class Email {
 		}
 		
 		return false;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
 }
