@@ -31,4 +31,8 @@ public class Cnpj {
 		
 		return false;
 	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
 }
