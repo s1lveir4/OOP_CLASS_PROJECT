@@ -1,11 +1,14 @@
 package shared;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import exceptions.CpfException;
 
-public class Cpf {
+public class Cpf implements Serializable {
+	
+	private static final long serialVersionUID = -7296445968369859999L;
 	
 	private final String cpf;
 	private final String validator = "/^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$/";

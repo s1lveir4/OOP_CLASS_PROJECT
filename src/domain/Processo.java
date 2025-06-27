@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,8 +9,10 @@ import exceptions.AudienciaException;
 import exceptions.DespesaException;
 import exceptions.ProcessoException;
 
-public class Processo {
+public class Processo implements Serializable {
 
+	private static final long serialVersionUID = -127104746683406190L;
+	
 	private final long numero;
 	private final Date dataAbertura;
 	private EFaseProcesso fase;

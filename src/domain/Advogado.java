@@ -1,10 +1,14 @@
 package domain;
 
+import java.io.Serializable;
+
 import contracts.IPessoa;
 import exceptions.AdvogadoException;
 
-public class Advogado implements IPessoa {
-
+public class Advogado implements IPessoa, Serializable {
+	
+	private static final long serialVersionUID = 2156631273752960259L;
+	
 	private final long registro;
 	private final PessoaFisica pessoaFisica;
 

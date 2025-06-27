@@ -1,11 +1,14 @@
 package shared;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import exceptions.CnpjException;
 
-public class Cnpj {
+public class Cnpj implements Serializable {
+	
+	private static final long serialVersionUID = -5453903433421581426L;
 	
 	private final String cnpj;
 	private final String validator = "^\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}\\-\\d{2}$";

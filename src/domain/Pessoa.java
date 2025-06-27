@@ -1,9 +1,13 @@
 package domain;
 
+import java.io.Serializable;
+
 import contracts.IPessoa;
 import exceptions.PessoaException;
 
-public abstract class Pessoa implements IPessoa {
+public abstract class Pessoa implements IPessoa, Serializable {
+
+	private static final long serialVersionUID = -631559883794721892L;
 
 	private String nome;
 	private String email;

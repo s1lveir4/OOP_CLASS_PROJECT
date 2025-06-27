@@ -6,6 +6,8 @@ import utils.CnpjUtil;
 
 public class PessoaJuridica extends Pessoa {
 	
+	private static final long serialVersionUID = -3025547871166772130L;
+	
 	private final String cnpj;
 	private PessoaFisica preposto;
 	

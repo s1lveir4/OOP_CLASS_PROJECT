@@ -1,11 +1,14 @@
 package shared;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import exceptions.EmailException;
 
-public class Email {
+public class Email implements Serializable {
+	
+	private static final long serialVersionUID = -5521072287599172688L;
 	
 	private final String emailAddress;
 	private final String validator = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
