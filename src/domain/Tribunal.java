@@ -1,12 +1,16 @@
 package domain;
 
+import java.io.Serializable;
+
 import exceptions.TribunalException;
 
-public class Tribunal {
+public class Tribunal implements Serializable {
 
+	private static final long serialVersionUID = 8328235635187663056L;
+	
 	private final String sigla;
-	private final String descricao;
-	private final String secao;
+	private  String descricao;
+	private  String secao;
 
 	public Tribunal(String sigla, String descricao, String secao) throws TribunalException {
 
@@ -40,6 +44,15 @@ public class Tribunal {
 
 	public String getSecao() {
 		return secao;
+	}
+	
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public void setSecao(String secao) {
+		this.secao = secao;
 	}
 
 	public StringBuilder listaInformacoes() {

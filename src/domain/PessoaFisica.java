@@ -7,6 +7,8 @@ import utils.CpfUtil;
 
 public class PessoaFisica extends Pessoa implements IPessoa {
 
+	private static final long serialVersionUID = 6797012348199170294L;
+
 	private final String cpf;
 
 	public PessoaFisica(String nome, String email, String telefone, String cpf) throws PessoaException, PessoaFisicaException{

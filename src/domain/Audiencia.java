@@ -1,11 +1,14 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import exceptions.AudienciaException;
 
-public class Audiencia {
+public class Audiencia implements Serializable {
 
+	private static final long serialVersionUID = -3200731711398845894L;
+	
 	private final Date data;
 	private final String recomendacao;
 	private final Advogado advogado;
