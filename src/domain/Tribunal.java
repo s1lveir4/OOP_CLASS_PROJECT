@@ -9,10 +9,10 @@ public class Tribunal implements Serializable {
 	private static final long serialVersionUID = 8328235635187663056L;
 	
 	private final String sigla;
-	private  String descricao;
+	private  String nome;
 	private  String secao;
 
-	public Tribunal(String sigla, String descricao, String secao) throws TribunalException {
+	public Tribunal(String sigla, String nome, String secao) throws TribunalException {
 
 		// TODO fazer a verificacao da sigla usando regex
 		if (sigla == null || sigla.isBlank() || sigla.isEmpty()) {
@@ -20,8 +20,8 @@ public class Tribunal implements Serializable {
 		}
 
 		// TODO fazer a verificacao da descricao usando regex
-		if (descricao == null || descricao.isBlank() || descricao.isEmpty()) {
-			throw new TribunalException("Insira uma descricao válida.");
+		if (nome == null || nome.isBlank() || nome.isEmpty()) {
+			throw new TribunalException("Insira uma nome válido.");
 		}
 
 		// TODO fazer a verificacao da descricao usando regex
@@ -30,7 +30,7 @@ public class Tribunal implements Serializable {
 		}
 
 		this.sigla = sigla;
-		this.descricao = descricao;
+		this.nome = nome;
 		this.secao = secao;
 	}
 
@@ -38,8 +38,8 @@ public class Tribunal implements Serializable {
 		return sigla;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
 
 	public String getSecao() {
@@ -47,8 +47,8 @@ public class Tribunal implements Serializable {
 	}
 	
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public void setSecao(String secao) {
@@ -60,7 +60,7 @@ public class Tribunal implements Serializable {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append("\nSIGLA: " + getSigla() + " - " + "SECAO: " + getSecao());
-		sb.append("\nDESCRIÇÃO: " + getDescricao());
+		sb.append("\nNome: " + getNome());
 
 		return sb;
 	}
