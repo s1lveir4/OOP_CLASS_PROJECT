@@ -9,12 +9,12 @@ public class Advogado implements IPessoa, Serializable {
 	
 	private static final long serialVersionUID = 2156631273752960259L;
 	
-	private final long registro;
+	private final String registro;
 	private final PessoaFisica pessoaFisica;
 
-	public Advogado(PessoaFisica pessoaFisica, long registro) throws AdvogadoException {
+	public Advogado(PessoaFisica pessoaFisica, String registro) throws AdvogadoException {
 
-		if (registro <= 0) {
+		if (registro == null || registro.isBlank()) {
 			throw new AdvogadoException("Insira um registro válido.");
 		}
 		
@@ -47,7 +47,7 @@ public class Advogado implements IPessoa, Serializable {
 		return pessoaFisica.getCadastroRF();
 	}
 
-	public long getRegistro() {
+	public String getRegistro() {
 		return registro;
 	}
 

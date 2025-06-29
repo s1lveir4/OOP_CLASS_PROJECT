@@ -58,7 +58,7 @@ public class Main {
 		}
 		Advogado p3 = null;
 		try {
-			p3 = new Advogado(new PessoaFisica("Maria", "maria@exemplo.com", "24977378193", "82873774853"), 18264785471L);
+			p3 = new Advogado(new PessoaFisica("Maria", "maria@exemplo.com", "24977378193", "82873774853"), "18264785471");
 		} catch (AdvogadoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,7 +71,7 @@ public class Main {
 		}
 		Advogado p4 = null;
 		try {
-			p4 = new Advogado(new PessoaFisica("Carlos", "carlos@exemplo.com", "24966451787", "98578901723"), 76498162709L);
+			p4 = new Advogado(new PessoaFisica("Carlos", "carlos@exemplo.com", "24966451787", "98578901723"), "76498162709");
 		} catch (AdvogadoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
