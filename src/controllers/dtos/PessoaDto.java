@@ -1,6 +1,6 @@
 package controllers.dtos;
 
-public class PessoaDto {
+public abstract class PessoaDto {
 
 	private String nome;
 	private String email;
