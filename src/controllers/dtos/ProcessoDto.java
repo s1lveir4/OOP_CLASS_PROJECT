@@ -1,87 +1,90 @@
 package controllers.dtos;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 public class ProcessoDto {
 	
-	private long numero;
-	private Date dataAbertura;
+	private String numero;
+	private String dataAbertura;
 	private String fase;
 	
-	private PessoaDto cliente;
-	private PessoaDto parteContraria;
-	private TribunalDto tribunal;
-	
-	private ArrayList<AudienciaDto> audiencias = new ArrayList<>();
-	private ArrayList<DespesaDto> custas = new ArrayList<>();
+	private String cadastroRfCliente;
+	private String cadastroRfParteContraria;
+	private String siglaTribunal;
+
 	
 	private ProcessoDto() {}
-	
-	public ProcessoDto(long numero, Date dataAbertura, String fase, PessoaDto cliente, PessoaDto parteContraria,
-			TribunalDto tribunal) {
 
+
+	public ProcessoDto(String numero, String dataAbertura, String fase, String cadastroRfCliente,
+			String cadastroRfParteContraria, String siglaTribunal) {
+		super();
 		this.numero = numero;
 		this.dataAbertura = dataAbertura;
 		this.fase = fase;
-		this.cliente = cliente;
-		this.parteContraria = parteContraria;
-		this.tribunal = tribunal;
+		this.cadastroRfCliente = cadastroRfCliente;
+		this.cadastroRfParteContraria = cadastroRfParteContraria;
+		this.siglaTribunal = siglaTribunal;
 	}
 
-	public long getNumero() {
+
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(long numero) {
+
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
-	public Date getDataAbertura() {
+
+	public String getDataAbertura() {
 		return dataAbertura;
 	}
 
-	public void setDataAbertura(Date dataAbertura) {
+
+	public void setDataAbertura(String dataAbertura) {
 		this.dataAbertura = dataAbertura;
 	}
+
 
 	public String getFase() {
 		return fase;
 	}
 
+
 	public void setFase(String fase) {
 		this.fase = fase;
 	}
 
-	public PessoaDto getCliente() {
-		return cliente;
+
+	public String getCadastroRfCliente() {
+		return cadastroRfCliente;
 	}
 
-	public void setCliente(PessoaDto cliente) {
-		this.cliente = cliente;
+
+	public void setCadastroRfCliente(String cadastroRfCliente) {
+		this.cadastroRfCliente = cadastroRfCliente;
 	}
 
-	public PessoaDto getParteContraria() {
-		return parteContraria;
+
+	public String getCadastroRfParteContraria() {
+		return cadastroRfParteContraria;
 	}
 
-	public void setParteContraria(PessoaDto parteContraria) {
-		this.parteContraria = parteContraria;
+
+	public void setCadastroRfParteContraria(String cadastroRfParteContraria) {
+		this.cadastroRfParteContraria = cadastroRfParteContraria;
 	}
 
-	public TribunalDto getTribunal() {
-		return tribunal;
+
+	public String getSiglaTribunal() {
+		return siglaTribunal;
 	}
 
-	public void setTribunal(TribunalDto tribunal) {
-		this.tribunal = tribunal;
+
+	public void setSiglaTribunal(String siglaTribunal) {
+		this.siglaTribunal = siglaTribunal;
 	}
+
 	
-	public void addAudiencia(AudienciaDto audiencia) {
-		this.audiencias.add(audiencia);
-	}
 	
-	public void addCusta(DespesaDto custa) {
-		this.custas.add(custa);
-	}
 }

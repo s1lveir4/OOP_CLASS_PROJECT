@@ -1,16 +1,14 @@
 package controllers.dtos;
 
-import java.util.Date;
-
 public class DespesaDto {
 
-	private Date data;
+	private String data;
 	private String descricao;
-	private double valor;
+	private String valor;
 	
 	public DespesaDto() {}
 	
-	public DespesaDto(Date data, String descricao, double valor) {
+	public DespesaDto(String data, String descricao, String valor) {
 		
 		this.data = data;
 		this.descricao = descricao;
@@ -18,11 +16,11 @@ public class DespesaDto {
 		
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
@@ -34,11 +32,11 @@ public class DespesaDto {
 		this.descricao = descricao;
 	}
 
-	public double getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 	
