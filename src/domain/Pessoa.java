@@ -3,24 +3,22 @@ package domain;
 import java.io.Serializable;
 
 import contracts.IPessoa;
+import exceptions.EmailException;
 import exceptions.PessoaException;
+import shared.Email;
 
 public abstract class Pessoa implements IPessoa, Serializable {
 
 	private static final long serialVersionUID = -631559883794721892L;
 
 	private String nome;
-	private String email;
+	private Email email;
 	private String telefone;
 
-	public Pessoa(String nome, String email, String telefone) throws PessoaException {
+	public Pessoa(String nome, String email, String telefone) throws PessoaException, EmailException {
 
 		if (nome == null || nome.isBlank() || nome.isEmpty()) {
 			throw new PessoaException("Insira um nome válido.");
-		}
-
-		if (email == null || email.isBlank() || email.isEmpty()) {
-			throw new PessoaException("Insira um email válido.");
 		}
 
 		if (telefone == null || telefone.isBlank() || telefone.isEmpty()) {
@@ -28,7 +26,7 @@ public abstract class Pessoa implements IPessoa, Serializable {
 		}
 
 		this.nome = nome;
-		this.email = email;
+		this.email = new Email(email);
 		this.telefone = telefone;
 	}
 
@@ -41,11 +39,11 @@ public abstract class Pessoa implements IPessoa, Serializable {
 	}
 
 	public String getEmail() {
-		return email;
+		return email.getEmailAddress();
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String email) throws EmailException{
+		this.email = new Email(email);
 	}
 
 	public String getTelefone() {
