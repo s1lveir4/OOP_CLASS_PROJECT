@@ -1,9 +1,11 @@
 package controllers.dtos;
 
+import java.util.Date;
+
 public class ProcessoDto {
 	
 	private String numero;
-	private String dataAbertura;
+	private Date dataAbertura;
 	private String fase;
 	
 	private String cadastroRfCliente;
@@ -14,7 +16,7 @@ public class ProcessoDto {
 	private ProcessoDto() {}
 
 
-	public ProcessoDto(String numero, String dataAbertura, String fase, String cadastroRfCliente,
+	public ProcessoDto(String numero, Date dataAbertura, String fase, String cadastroRfCliente,
 			String cadastroRfParteContraria, String siglaTribunal) {
 		super();
 		this.numero = numero;
@@ -36,12 +38,12 @@ public class ProcessoDto {
 	}
 
 
-	public String getDataAbertura() {
+	public Date getDataAbertura() {
 		return dataAbertura;
 	}
 
 
-	public void setDataAbertura(String dataAbertura) {
+	public void setDataAbertura(Date dataAbertura) {
 		this.dataAbertura = dataAbertura;
 	}
 
