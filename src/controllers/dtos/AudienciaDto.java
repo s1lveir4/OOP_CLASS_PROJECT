@@ -1,10 +1,8 @@
 package controllers.dtos;
 
-import java.util.Date;
-
 public class AudienciaDto {
 
-	private Date data;
+	private String data;
 	private String recomendacao;
 	
 	private String cpfAdvogado;
@@ -14,7 +12,7 @@ public class AudienciaDto {
 	
 	public AudienciaDto() {}
 
-	public AudienciaDto(Date data, String recomendacao, String cpfAdvogado, String nomeAdvogado, String emailAdvogado,
+	public AudienciaDto(String data, String recomendacao, String cpfAdvogado, String nomeAdvogado, String emailAdvogado,
 			String telefoneAdvogado) {	
 		
 		this.data = data;
@@ -26,11 +24,11 @@ public class AudienciaDto {
 		
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
