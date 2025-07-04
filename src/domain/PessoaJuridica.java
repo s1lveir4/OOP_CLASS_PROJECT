@@ -1,17 +1,20 @@
 package domain;
 
+import exceptions.CnpjException;
+import exceptions.EmailException;
 import exceptions.PessoaException;
 import exceptions.PessoaJuridicaException;
+import shared.Cnpj;
 import utils.CnpjUtil;
 
 public class PessoaJuridica extends Pessoa {
 	
 	private static final long serialVersionUID = -3025547871166772130L;
 	
-	private final String cnpj;
+	private final Cnpj cnpj;
 	private PessoaFisica preposto;
 	
-	public PessoaJuridica(String nome, String email, String telefone, String cnpj, PessoaFisica preposto) throws PessoaException, PessoaJuridicaException {
+	public PessoaJuridica(String nome, String email, String telefone, String cnpj, PessoaFisica preposto) throws PessoaException, PessoaJuridicaException, EmailException, CnpjException {
 		
 		super(nome, email, telefone);
 		
@@ -23,11 +26,11 @@ public class PessoaJuridica extends Pessoa {
 			throw new PessoaJuridicaException("Forneça um preposto válido.");
 		}
 		
-		this.cnpj = cnpj;
+		this.cnpj = new Cnpj(cnpj);
 		this.preposto = preposto;
 	}
 
-	public String getCnpj() {
+	public Cnpj getCnpj() {
 		return cnpj;
 	}
 
@@ -42,7 +45,7 @@ public class PessoaJuridica extends Pessoa {
 	@Override	
 	public String getCadastroRF() {
 		
-		return this.getCnpj();
+		return this.getCnpj().getCnpj();
 	}
 	
 	@Override
